@@ -365,8 +365,14 @@ function reverseWords(str) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  let strNew = '';
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i].toUpperCase() === str[i]) {
+      strNew += str[i].toLowerCase();
+    } else strNew += str[i].toUpperCase();
+  }
+  return strNew;
 }
 
 /**
@@ -411,8 +417,8 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.replace('<', '').replace('>', '');
 }
 
 /**
