@@ -180,14 +180,13 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  /* if (str === '') return 0;
+function sumOfCodes(str) {
+  if (str === '' || str === undefined || str === null) return 0;
   let sum = 0;
-  for (let i = 0; i < str.length - 1; i += 1) {
+  for (let i = 0; i <= str.length - 1; i += 1) {
     sum += str.charCodeAt(i);
   }
-  return sum; */
-  throw new Error('Not implemented');
+  return sum;
 }
 
 /**
