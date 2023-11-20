@@ -148,8 +148,8 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, '');
 }
 
 /**
@@ -232,8 +232,16 @@ function endsWith(str, substr) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  const arr = [String(minutes), String(seconds)];
+  if (minutes < 10) {
+    arr[0] = '0'.concat(String(minutes));
+  }
+  if (seconds < 10) {
+    arr[1] = '0'.concat(String(seconds));
+  }
+  const str = arr.join().split(',').join(':');
+  return str;
 }
 
 /**
