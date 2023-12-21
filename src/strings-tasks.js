@@ -249,15 +249,10 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  const arr = [String(minutes), String(seconds)];
-  if (minutes < 10) {
-    arr[0] = '0'.concat(String(minutes));
-  }
-  if (seconds < 10) {
-    arr[1] = '0'.concat(String(seconds));
-  }
-  const str = arr.join().split(',').join(':');
-  return str;
+  const res = String(minutes)
+    .padStart(2, 0)
+    .concat(':', String(seconds).padStart(2, 0));
+  return res;
 }
 
 /**
